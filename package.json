@@ -1,0 +1,42 @@
+{
+  "name": "@gonzih/superbank-mcp",
+  "version": "1.0.0",
+  "description": "Superbank instant liquidity MCP — settlement requests, payments, disbursements for AI agents",
+  "bin": {
+    "superbank-mcp": "dist/index.js"
+  },
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "esbuild src/index.ts --bundle --platform=node --target=node18 --outfile=dist/index.js --external:@modelcontextprotocol/sdk --external:zod",
+    "start": "node dist/index.js",
+    "dev": "node --loader ts-node/esm src/index.ts"
+  },
+  "files": [
+    "dist"
+  ],
+  "keywords": [
+    "mcp",
+    "superbank",
+    "liquidity",
+    "payments",
+    "stablecoin",
+    "settlement"
+  ],
+  "author": "Gonzih",
+  "license": "MIT",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "1.29.0",
+    "zod": "3.24.2"
+  },
+  "devDependencies": {
+    "@types/node": "22.14.0",
+    "esbuild": "^0.25.2",
+    "typescript": "5.8.3"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
